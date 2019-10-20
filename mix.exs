@@ -5,7 +5,7 @@ defmodule Entice.Utils.Mixfile do
     [app: :entice_utils,
      version: "0.0.1",
      elixir: "~> 1.2",
-     deps: deps]
+     deps: deps()]
   end
 
   defp deps do

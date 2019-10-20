@@ -82,7 +82,7 @@ defmodule Entice.Utils.SyncEventTest do
 
   setup do
     {:ok, pid} = SyncEvent.start_link({:state, %{}})
-    SyncEvent.put_handler(pid, TestHandler, self)
+    SyncEvent.put_handler(pid, TestHandler, self())
 
     {:ok, [handler: pid]}
   end
