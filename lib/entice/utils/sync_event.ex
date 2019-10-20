@@ -13,7 +13,7 @@ defmodule Entice.Utils.SyncEvent do
   """
   use Behaviour
   use GenServer
-  import Set
+  import MapSet
 
 
   # Handler API
@@ -73,7 +73,7 @@ defmodule Entice.Utils.SyncEvent do
 
 
   def start_link(state, opts \\ []),
-  do: GenServer.start_link(__MODULE__, %{handlers: HashSet.new, state: state}, opts)
+  do: GenServer.start_link(__MODULE__, %{handlers: MapSet.new, state: state}, opts)
 
 
   def has_handler?(manager, handler) when is_pid(manager) and is_atom(handler),
